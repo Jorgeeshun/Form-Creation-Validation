@@ -1,4 +1,29 @@
-// Wait for the DOM content to be fully loaded before running the script
+/**
+ * This function initializes the application by interacting with the DOM.
+ * It is designed to be called after the HTML document is fully loaded.
+ */
+function initializeApp() {
+  // Select the body element of the document
+  const body = document.querySelector('body');
+
+  // Create a new div element to hold a message
+  const messageDiv = document.createElement('div');
+
+  // Set the text content of the div
+  messageDiv.textContent = 'The DOM has been fully loaded and the initialization function has run!';
+
+  // Apply some basic styling for visibility
+  messageDiv.style.cssText = 'padding: 20px; background-color: #d4edda; color: #155724; text-align: center; font-family: sans-serif; border-radius: 8px; margin: 20px;';
+
+  // Append the new div to the body of the document
+  body.prepend(messageDiv);
+
+  console.log('initializeApp() has been executed.');
+}
+
+// Add an event listener that waits for the DOM to be fully loaded and parsed.
+// Once that event occurs, it calls our initializeApp function.
+document.addEventListener('DOMContentLoaded', initializeApp);// Wait for the DOM content to be fully loaded before running the script
 document.addEventListener('DOMContentLoaded', () => {
 
     // Select the form and feedback div
